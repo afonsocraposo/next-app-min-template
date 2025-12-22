@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { users } from "@/lib/db/auth-schema";
 import { eq } from "drizzle-orm";
 
-export class UserRepository {
+export class UsersRepository {
   constructor(public readonly id: string) {}
 
   async getUser(): Promise<User | null> {

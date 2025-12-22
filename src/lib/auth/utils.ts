@@ -2,7 +2,7 @@ import { User as DbUser } from "@/lib/db/types";
 import { headers } from "next/headers";
 import { auth } from ".";
 import { User } from "better-auth/types";
-import { UserRepository } from "../repositories/user";
+import { UsersRepository } from "../repositories/users";
 
 export async function getSession() {
   return await auth.api.getSession({
@@ -19,5 +19,5 @@ export async function getSessionUser(): Promise<User | null> {
 export async function getUser(): Promise<DbUser | null> {
   const user = await getSessionUser();
   if (!user) return null;
-  return new UserRepository(user.id).getUser();
+  return new UsersRepository(user.id).getUser();
 }
