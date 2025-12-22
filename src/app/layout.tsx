@@ -9,7 +9,7 @@ import {
 } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 import { theme } from "@/theme";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
   title: "Mantine Next.js template",
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     shortcut: "/favicon.svg",
     apple: "/favicon.svg",
   },
+};
 
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({ children }: { children: any }) {
